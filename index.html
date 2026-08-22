@@ -1,0 +1,1705 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>For Anosha — Best Sister Ever ❤️</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+font-family:Arial,Helvetica,sans-serif;
+background:#fff7fb;
+color:#333;
+overflow:hidden;
+}
+button{font-family:inherit}
+
+/* ================= LOADER ================= */
+
+#loader{
+position:fixed;
+inset:0;
+z-index:99999;
+display:flex;
+align-items:center;
+justify-content:center;
+flex-direction:column;
+background:linear-gradient(135deg,#ff8fbd,#ffb6d5,#ffdced);
+transition:1s;
+}
+#loader.hide{opacity:0;visibility:hidden}
+
+.loader-heart{
+font-size:78px;
+animation:pulse 1s infinite;
+}
+@keyframes pulse{
+50%{transform:scale(1.2)}
+}
+
+.loader-title{
+margin-top:25px;
+font-size:28px;
+font-weight:bold;
+color:white;
+text-align:center;
+}
+.loader-sub{
+margin-top:10px;
+color:white;
+opacity:.9;
+}
+
+.progress-box{
+width:280px;
+height:7px;
+margin-top:25px;
+border-radius:20px;
+overflow:hidden;
+background:#ffffff55;
+}
+.progress{
+height:100%;
+width:0;
+background:white;
+animation:loading 3s linear forwards;
+}
+@keyframes loading{to{width:100%}}
+
+#percent{
+color:white;
+font-size:13px;
+margin-top:10px;
+}
+
+.float{
+position:absolute;
+bottom:-30px;
+color:white;
+animation:floatUp linear infinite;
+}
+@keyframes floatUp{
+0%{transform:translateY(0);opacity:0}
+20%{opacity:1}
+100%{transform:translateY(-110vh) rotate(360deg);opacity:0}
+}
+
+/* ================= WEBSITE ================= */
+
+#website{
+opacity:0;
+transition:1s;
+height:100vh;
+overflow-y:auto;
+}
+#website.show{opacity:1}
+
+nav{
+position:fixed;
+top:0;
+left:0;
+right:0;
+z-index:1000;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:16px 6%;
+background:#ffffffdd;
+backdrop-filter:blur(15px);
+box-shadow:0 5px 25px #0000000b;
+}
+
+.logo{
+font-size:20px;
+font-weight:bold;
+color:#ff3f83;
+}
+
+.nav-buttons button{
+border:0;
+background:none;
+margin-left:12px;
+cursor:pointer;
+font-size:13px;
+color:#555;
+}
+.nav-buttons button:hover{color:#ff3f83}
+
+/* ================= COMMON ================= */
+
+section{
+padding:110px 7%;
+text-align:center;
+}
+
+h2{
+font-size:40px;
+color:#ff3f83;
+}
+
+.subtitle{
+margin:10px auto 40px;
+color:#888;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+background:
+radial-gradient(circle at top,#ffd6e7,transparent 45%),
+#fff8fb;
+}
+
+.hero-content{max-width:750px}
+
+.badge{
+display:inline-block;
+padding:9px 18px;
+border-radius:50px;
+background:#ffe1ed;
+color:#ff3f83;
+font-size:13px;
+margin-bottom:20px;
+}
+
+.hero h1{
+font-size:clamp(45px,9vw,85px);
+color:#ff3f83;
+}
+
+.hero h3{
+font-size:24px;
+margin-top:15px;
+}
+
+.hero p{
+max-width:600px;
+margin:20px auto;
+line-height:1.8;
+color:#777;
+}
+
+.btn{
+border:0;
+border-radius:50px;
+padding:14px 25px;
+background:#ff3f83;
+color:white;
+cursor:pointer;
+font-size:15px;
+box-shadow:0 10px 25px #ff3f8340;
+transition:.3s;
+}
+.btn:hover{
+transform:translateY(-4px);
+}
+
+/* ================= AWARD ================= */
+
+.award-section{
+background:white;
+}
+
+.award{
+max-width:550px;
+margin:auto;
+padding:40px 25px;
+border-radius:30px;
+background:linear-gradient(135deg,#fff0f6,#ffe0ec);
+box-shadow:0 15px 40px #0000000b;
+}
+
+.trophy{
+font-size:70px;
+animation:floatTrophy 2s infinite alternate;
+}
+@keyframes floatTrophy{
+to{transform:translateY(-10px) rotate(3deg)}
+}
+
+.award h3{
+font-size:28px;
+color:#ff3f83;
+margin:15px 0;
+}
+
+.award p{
+line-height:1.7;
+color:#666;
+}
+
+/* ================= APPRECIATION ================= */
+
+.appreciation{
+background:#fff7fb;
+}
+
+.cards{
+max-width:1050px;
+margin:auto;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
+gap:20px;
+}
+
+.card{
+min-height:190px;
+perspective:1000px;
+cursor:pointer;
+}
+
+.card-inner{
+position:relative;
+min-height:190px;
+height:100%;
+transition:.7s;
+transform-style:preserve-3d;
+}
+
+.card.active .card-inner{
+transform:rotateY(180deg);
+}
+
+.front,.back{
+position:absolute;
+inset:0;
+border-radius:25px;
+padding:25px;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+backface-visibility:hidden;
+box-shadow:0 10px 30px #0000000a;
+}
+
+.front{background:white}
+.front .emoji{font-size:45px;margin-bottom:12px}
+.front h3{color:#ff3f83}
+
+.back{
+background:linear-gradient(135deg,#ff4d91,#ff9dc2);
+color:white;
+transform:rotateY(180deg);
+line-height:1.6;
+}
+
+/* ================= ROAST ================= */
+
+.roast-section{
+background:linear-gradient(135deg,#fff0f6,#ffe1ed);
+}
+
+.roast-box{
+max-width:600px;
+margin:auto;
+background:white;
+padding:35px;
+border-radius:30px;
+box-shadow:0 15px 40px #0000000b;
+}
+
+.roast-text{
+min-height:70px;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:20px;
+line-height:1.5;
+color:#555;
+margin-bottom:25px;
+}
+
+/* ================= QUIZ ================= */
+
+.quiz{
+background:white;
+}
+
+.quiz-box{
+max-width:650px;
+margin:auto;
+padding:30px;
+border-radius:30px;
+background:#fff7fb;
+box-shadow:0 15px 40px #00000008;
+}
+
+.question{
+font-size:21px;
+font-weight:bold;
+margin-bottom:25px;
+}
+
+.answers{
+display:grid;
+gap:12px;
+}
+
+.answer{
+border:2px solid #ffd1e2;
+background:white;
+padding:13px;
+border-radius:15px;
+cursor:pointer;
+transition:.3s;
+}
+.answer:hover{
+background:#ffe8f1;
+transform:translateX(3px);
+}
+
+.quiz-result{
+margin-top:20px;
+font-weight:bold;
+color:#ff3f83;
+}
+
+/* ================= MINI GAME ================= */
+
+.game-section{
+background:#fff7fb;
+}
+
+.game-area{
+position:relative;
+max-width:700px;
+height:350px;
+margin:30px auto;
+overflow:hidden;
+border-radius:25px;
+background:
+linear-gradient(#fff,#fff0f6);
+border:3px solid #ffd0e1;
+cursor:crosshair;
+}
+
+.game-info{
+font-weight:bold;
+color:#ff3f83;
+}
+
+.game-heart{
+position:absolute;
+font-size:32px;
+cursor:pointer;
+animation:gameFall linear;
+}
+@keyframes gameFall{
+from{top:-50px}
+to{top:100%}
+}
+
+/* ================= MYSTERY BOX ================= */
+
+.mystery{
+background:linear-gradient(135deg,#fff0f6,#ffd9e9);
+}
+
+.boxes{
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+margin-top:40px;
+}
+
+.mystery-box{
+width:150px;
+height:150px;
+border:0;
+border-radius:25px;
+background:white;
+box-shadow:0 12px 30px #00000012;
+font-size:60px;
+cursor:pointer;
+transition:.3s;
+}
+
+.mystery-box:hover{
+transform:translateY(-8px) rotate(2deg);
+}
+
+#mystery-result{
+margin-top:25px;
+font-size:20px;
+font-weight:bold;
+color:#ff3f83;
+}
+
+/* ================= SECRET ================= */
+
+.secret{
+background:white;
+}
+
+.secret-box{
+max-width:500px;
+margin:auto;
+padding:35px;
+border-radius:30px;
+background:#fff5fa;
+}
+
+.secret-input{
+width:100%;
+padding:14px;
+border:2px solid #ffd0e1;
+border-radius:15px;
+outline:none;
+margin:15px 0;
+text-align:center;
+font-size:16px;
+}
+
+.secret-message{
+display:none;
+margin-top:20px;
+padding:20px;
+border-radius:20px;
+background:#ffe2ed;
+color:#555;
+line-height:1.7;
+}
+
+.secret-message.show{display:block}
+
+/* ================= MUSIC ================= */
+
+.music{
+background:#fff7fb;
+}
+
+.music-player{
+max-width:450px;
+margin:auto;
+padding:30px;
+background:white;
+border-radius:30px;
+box-shadow:0 15px 40px #0000000b;
+}
+
+.music-disc{
+font-size:65px;
+animation:spin 4s linear infinite;
+animation-play-state:paused;
+}
+.music-disc.playing{
+animation-play-state:running;
+}
+@keyframes spin{
+to{transform:rotate(360deg)}
+}
+
+/* ================= LETTER ================= */
+
+.letter-section{
+background:white;
+}
+
+.envelope{
+max-width:650px;
+margin:40px auto;
+padding:35px;
+background:#fff4f8;
+border-radius:30px;
+box-shadow:0 15px 40px #0000000b;
+}
+
+.letter{
+text-align:left;
+line-height:1.9;
+color:#666;
+display:none;
+white-space:pre-line;
+}
+
+.letter.show{display:block}
+
+.letter-btn{
+margin-top:20px;
+}
+
+/* ================= NIGHT SKY ================= */
+
+.night{
+min-height:90vh;
+position:relative;
+overflow:hidden;
+background:
+radial-gradient(circle at 70% 20%,#fff 0 1px,transparent 2px),
+radial-gradient(circle at 20% 40%,#fff 0 1px,transparent 2px),
+radial-gradient(circle at 50% 70%,#fff 0 1px,transparent 2px),
+#101329;
+color:white;
+}
+
+.night h2{color:#ffd6e7}
+
+.moon{
+font-size:100px;
+margin:35px;
+animation:moonFloat 3s infinite alternate;
+}
+@keyframes moonFloat{
+to{transform:translateY(-10px)}
+}
+
+.night-message{
+max-width:650px;
+margin:auto;
+line-height:1.9;
+color:#ddd;
+}
+
+/* ================= FINAL ================= */
+
+.final{
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+flex-direction:column;
+background:
+linear-gradient(135deg,#ff8fbd,#ffbfd9,#ffddec);
+}
+
+.final h2{
+color:white;
+font-size:clamp(35px,7vw,65px);
+}
+
+.countdown{
+font-size:80px;
+font-weight:bold;
+color:white;
+margin:30px;
+}
+
+.final-message{
+display:none;
+max-width:700px;
+padding:35px;
+background:#ffffffee;
+border-radius:30px;
+line-height:1.8;
+font-size:19px;
+color:#555;
+box-shadow:0 20px 50px #00000018;
+}
+
+.final-message.show{
+display:block;
+animation:pop .7s;
+}
+
+@keyframes pop{
+from{opacity:0;transform:scale(.7)}
+to{opacity:1;transform:scale(1)}
+}
+
+/* ================= CONFETTI ================= */
+
+.confetti{
+position:fixed;
+top:-30px;
+z-index:9999;
+pointer-events:none;
+animation:fall 3s linear forwards;
+}
+@keyframes fall{
+to{
+transform:translateY(110vh) rotate(720deg);
+opacity:0;
+}
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:600px){
+
+nav{padding:14px 4%}
+
+.logo{font-size:16px}
+
+.nav-buttons button{
+font-size:10px;
+margin-left:4px;
+}
+
+section{padding:90px 5%}
+
+h2{font-size:30px}
+
+.hero h1{font-size:52px}
+
+.loader-title{
+font-size:22px;
+padding:0 20px;
+}
+
+.game-area{
+height:300px;
+}
+
+.mystery-box{
+width:120px;
+height:120px;
+font-size:45px;
+}
+
+}
+</style>
+</head>
+
+<body>
+
+<!-- ================= LOADING ================= -->
+
+<div id="loader">
+
+<span class="float" style="left:8%;animation-duration:5s">♥</span>
+<span class="float" style="left:20%;animation-duration:6s">♡</span>
+<span class="float" style="left:35%;animation-duration:7s">♥</span>
+<span class="float" style="left:55%;animation-duration:5s">♡</span>
+<span class="float" style="left:75%;animation-duration:6s">♥</span>
+<span class="float" style="left:90%;animation-duration:7s">♡</span>
+
+<div class="loader-heart">❤️</div>
+
+<div class="loader-title">
+Preparing Anosha's Surprise...
+</div>
+
+<div class="loader-sub">
+Your brother has been working on something 👀✨
+</div>
+
+<div class="progress-box">
+<div class="progress"></div>
+</div>
+
+<div id="percent">0%</div>
+
+</div>
+
+
+<!-- ================= WEBSITE ================= -->
+
+<div id="website">
+
+<nav>
+
+<div class="logo">
+For Anosha ❤️
+</div>
+
+<div class="nav-buttons">
+<button onclick="go('home')">Home</button>
+<button onclick="go('award')">Award</button>
+<button onclick="go('fun')">Fun</button>
+<button onclick="go('game')">Game</button>
+<button onclick="go('final')">Final</button>
+</div>
+
+</nav>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero" id="home">
+
+<div class="hero-content">
+
+<span class="badge">
+👑 Official Sister Appreciation Website
+</span>
+
+<h1>
+Hey Anosha! ❤️
+</h1>
+
+<h3>
+The World's Most Annoying... I Mean Amazing Sister 😂
+</h3>
+
+<p>
+You probably weren't expecting this.
+But someone decided that you deserve
+a whole website just to remind you
+how special you are. 🫶
+</p>
+
+<button class="btn" onclick="go('award')">
+Enter Your Surprise ✨
+</button>
+
+</div>
+
+</section>
+
+
+<!-- ================= AWARD ================= -->
+
+<section class="award-section" id="award">
+
+<h2>
+🏆 Sister Award
+</h2>
+
+<p class="subtitle">
+After extremely serious research... 😂
+</p>
+
+<div class="award">
+
+<div class="trophy">
+🏆
+</div>
+
+<h3>
+World's Most Amazing Sister
+</h3>
+
+<p>
+Awarded to <strong>Anosha</strong> for outstanding
+performance in being caring, funny, supportive,
+occasionally annoying 😂 and absolutely irreplaceable.
+</p>
+
+<br>
+
+<p>
+<strong>Official Score: 100/100 ❤️</strong>
+</p>
+
+</div>
+
+</section>
+
+
+<!-- ================= APPRECIATION ================= -->
+
+<section class="appreciation">
+
+<h2>
+Things That Make You Special 💗
+</h2>
+
+<p class="subtitle">
+Tap the cards. Don't just stare at them. 😂
+</p>
+
+<div class="cards">
+
+<div class="card" onclick="flip(this)">
+<div class="card-inner">
+
+<div class="front">
+<div class="emoji">🌸</div>
+<h3>Your Kindness</h3>
+</div>
+
+<div class="back">
+You care about people more than you sometimes realize.
+That's one of the things that makes you special. ❤️
+</div>
+
+</div>
+</div>
+
+
+<div class="card" onclick="flip(this)">
+<div class="card-inner">
+
+<div class="front">
+<div class="emoji">😂</div>
+<h3>Your Humor</h3>
+</div>
+
+<div class="back">
+Sometimes you're actually funny.
+Don't let this compliment go to your head. 😂
+</div>
+
+</div>
+</div>
+
+
+<div class="card" onclick="flip(this)">
+<div class="card-inner">
+
+<div class="front">
+<div class="emoji">🫶</div>
+<h3>Your Support</h3>
+</div>
+
+<div class="back">
+Having a sister who can be there when things get difficult
+is something worth appreciating every day.
+</div>
+
+</div>
+</div>
+
+
+<div class="card" onclick="flip(this)">
+<div class="card-inner">
+
+<div class="front">
+<div class="emoji">🦋</div>
+<h3>Just You</h3>
+</div>
+
+<div class="back">
+You don't need to be perfect.
+You're already an important part of the family. ❤️
+</div>
+
+</div>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= ROAST ================= -->
+
+<section class="roast-section" id="fun">
+
+<h2>
+😈 Sister Roast Machine
+</h2>
+
+<p class="subtitle">
+Warning: Completely harmless sibling-level roasting. 😂
+</p>
+
+<div class="roast-box">
+
+<div class="roast-text" id="roastText">
+Click the button if you dare...
+</div>
+
+<button class="btn" onclick="roast()">
+Roast Anosha 🔥
+</button>
+
+</div>
+
+</section>
+
+
+<!-- ================= QUIZ ================= -->
+
+<section class="quiz">
+
+<h2>
+🧠 Sister Quiz
+</h2>
+
+<p class="subtitle">
+Let's see how well Anosha knows her brother.
+</p>
+
+<div class="quiz-box">
+
+<div class="question" id="question">
+What is your brother's favorite thing?
+</div>
+
+<div class="answers">
+
+<button class="answer" onclick="answer(false)">
+Sleeping 😴
+</button>
+
+<button class="answer" onclick="answer(true)">
+Gaming 🎮
+</button>
+
+<button class="answer" onclick="answer(false)">
+Doing homework 📚
+</button>
+
+<button class="answer" onclick="answer(false)">
+Cleaning the room 😂
+</button>
+
+</div>
+
+<div class="quiz-result" id="quizResult"></div>
+
+</div>
+
+</section>
+
+
+<!-- ================= GAME ================= -->
+
+<section class="game-section" id="game">
+
+<h2>
+🎮 Catch The Hearts
+</h2>
+
+<p class="subtitle">
+Click the falling hearts and reach 10 points!
+</p>
+
+<div class="game-info">
+Score: <span id="score">0</span> / 10
+</div>
+
+<div class="game-area" id="gameArea"></div>
+
+<button class="btn" onclick="startGame()">
+Start Game ❤️
+</button>
+
+</section>
+
+
+<!-- ================= MYSTERY BOXES ================= -->
+
+<section class="mystery">
+
+<h2>
+🎁 Choose Your Mystery Box
+</h2>
+
+<p class="subtitle">
+Only one contains the biggest surprise... 👀
+</p>
+
+<div class="boxes">
+
+<button class="mystery-box" onclick="chooseBox(1)">
+🎁
+</button>
+
+<button class="mystery-box" onclick="chooseBox(2)">
+🎁
+</button>
+
+<button class="mystery-box" onclick="chooseBox(3)">
+🎁
+</button>
+
+</div>
+
+<div id="mystery-result"></div>
+
+</section>
+
+
+<!-- ================= SECRET ================= -->
+
+<section class="secret">
+
+<h2>
+🔐 Secret Sister Message
+</h2>
+
+<p class="subtitle">
+A little secret is waiting behind the code.
+</p>
+
+<div class="secret-box">
+
+<p>
+Hint: The code is <strong>ANOSHA</strong> 👀
+</p>
+
+<input
+class="secret-input"
+id="secretInput"
+placeholder="Enter secret code..."
+>
+
+<button class="btn" onclick="unlockSecret()">
+Unlock 🔓
+</button>
+
+<div class="secret-message" id="secretMessage">
+
+You unlocked it! 🎉
+
+Anosha, no matter how much we argue,
+annoy each other or make fun of each other,
+you're still my sister and I'll always have
+your back.
+
+That's the real secret. ❤️
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= MUSIC ================= -->
+
+<section class="music">
+
+<h2>
+🎵 Little Music Corner
+</h2>
+
+<p class="subtitle">
+Add your own music file later if you want.
+</p>
+
+<div class="music-player">
+
+<div class="music-disc" id="musicDisc">
+🎵
+</div>
+
+<br>
+
+<button class="btn" onclick="toggleMusic()">
+Play / Pause 🎶
+</button>
+
+<audio id="music">
+<source src="music.mp3" type="audio/mpeg">
+</audio>
+
+</div>
+
+</section>
+
+
+<!-- ================= LETTER ================= -->
+
+<section class="letter-section">
+
+<h2>
+💌 A Letter From Your Brother
+</h2>
+
+<p class="subtitle">
+Okay... serious mode for a moment.
+</p>
+
+<div class="envelope">
+
+<button class="btn letter-btn" onclick="openLetter()">
+Open Letter 💌
+</button>
+
+<div class="letter" id="letter">
+
+Dear Anosha,
+
+I don't always say it,
+and obviously I have to maintain
+my brother reputation 😂,
+but I really appreciate having you
+as my sister.
+
+We may argue.
+We may annoy each other.
+Sometimes you probably think
+I'm impossible. 😂
+
+But at the end of the day,
+you're family.
+
+I hope you always keep smiling,
+keep chasing the things you want,
+and never forget that you have
+someone who will always be
+on your side.
+
+You're not just my sister.
+
+You're my family,
+my forever teammate,
+and someone I genuinely care about.
+
+Stay happy, Anosha. ❤️
+
+— Your Brother
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= NIGHT SKY ================= -->
+
+<section class="night">
+
+<h2>
+🌙 One Quiet Moment
+</h2>
+
+<div class="moon">
+🌙
+</div>
+
+<div class="night-message">
+
+Sometimes the biggest things aren't
+expensive gifts or huge celebrations.
+
+Sometimes it's simply knowing
+that someone thought about you
+and wanted to make you smile.
+
+Tonight, this little corner of the internet
+belongs to one very special sister.
+
+<strong>Anosha. ❤️</strong>
+
+</div>
+
+</section>
+
+
+<!-- ================= FINAL ================= -->
+
+<section class="final" id="final">
+
+<h2>
+Wait... One Last Thing 👀
+</h2>
+
+<div class="countdown" id="countdown">
+3
+</div>
+
+<div class="final-message" id="finalMessage">
+
+<h3 style="color:#ff3f83;margin-bottom:15px">
+Anosha ❤️
+</h3>
+
+You're officially certified as:
+
+<br><br>
+
+<strong>THE BEST SISTER EVER 🏆👑</strong>
+
+<br><br>
+
+You can be annoying.
+You can steal things.
+You can start random arguments. 😂
+
+But you're also caring,
+special, funny,
+and completely irreplaceable.
+
+No matter where life takes us,
+you'll always be my sister
+and I'll always be rooting for you.
+
+<br><br>
+
+<strong>
+Keep smiling. Keep being you. ❤️
+</strong>
+
+<br><br>
+
+🎉 HAPPY SISTER DAY, ANOSHA! 🎉
+
+</div>
+
+</section>
+
+</div>
+
+
+<script>
+
+/* ================= LOADER ================= */
+
+let percent=0;
+
+const loaderCounter=setInterval(()=>{
+
+percent++;
+
+document.getElementById("percent").textContent=
+percent+"%";
+
+if(percent>=100){
+clearInterval(loaderCounter);
+}
+
+},30);
+
+
+setTimeout(()=>{
+
+document.getElementById("loader").classList.add("hide");
+
+document.getElementById("website").classList.add("show");
+
+document.body.style.overflow="auto";
+
+},3200);
+
+
+/* ================= NAVIGATION ================= */
+
+function go(id){
+
+const element=document.getElementById(id);
+
+if(element){
+
+element.scrollIntoView({
+behavior:"smooth"
+});
+
+}
+
+}
+
+
+/* ================= CARDS ================= */
+
+function flip(card){
+
+card.classList.toggle("active");
+
+}
+
+
+/* ================= ROAST ================= */
+
+const roasts=[
+
+"Anosha's room has a mysterious ecosystem. Scientists are still investigating. 😂",
+
+"She says 'I'm coming' and enters a completely different dimension. 😭",
+
+"Anosha can hear snacks opening from three rooms away. 👀",
+
+"Her superpower is turning a 5-minute story into a 45-minute documentary. 😂",
+
+"She doesn't need Google. She already knows everything. Apparently. 😭",
+
+"Breaking news: Anosha has once again stolen something and claims it was hers. 😂",
+
+"Her favorite hobby: annoying her brother and pretending she didn't. 😈"
+
+];
+
+function roast(){
+
+const random=
+Math.floor(Math.random()*roasts.length);
+
+document.getElementById("roastText").textContent=
+roasts[random];
+
+}
+
+
+/* ================= QUIZ ================= */
+
+function answer(correct){
+
+const result=
+document.getElementById("quizResult");
+
+if(correct){
+
+result.textContent=
+"Correct! 🎉 You actually know your brother! +100 sister points ❤️";
+
+}else{
+
+result.textContent=
+"Wrong! 😭 Sister privileges temporarily suspended. 😂";
+
+}
+
+}
+
+
+/* ================= GAME ================= */
+
+let score=0;
+let gameRunning=false;
+let gameTimer;
+
+function startGame(){
+
+if(gameRunning)return;
+
+score=0;
+
+document.getElementById("score").textContent=score;
+
+gameRunning=true;
+
+gameTimer=setInterval(createGameHeart,700);
+
+setTimeout(()=>{
+
+clearInterval(gameTimer);
+
+gameRunning=false;
+
+if(score<10){
+
+alert(
+"Game over! 😭 You scored "+
+score+
+"/10. Try again!"
+);
+
+}
+
+},15000);
+
+}
+
+function createGameHeart(){
+
+if(!gameRunning)return;
+
+const area=document.getElementById("gameArea");
+
+const heart=document.createElement("div");
+
+heart.className="game-heart";
+
+heart.textContent=
+Math.random()>.5 ? "❤️":"⭐";
+
+heart.style.left=
+Math.random()*90+"%";
+
+heart.style.animationDuration=
+(2+Math.random()*2)+"s";
+
+heart.onclick=()=>{
+
+score++;
+
+document.getElementById("score").textContent=score;
+
+heart.remove();
+
+if(score>=10){
+
+clearInterval(gameTimer);
+
+gameRunning=false;
+
+createConfetti();
+
+setTimeout(()=>{
+
+alert(
+"🎉 YOU WIN! 🎉\n\nAnosha is officially amazing!"
+);
+
+},200);
+
+}
+
+};
+
+area.appendChild(heart);
+
+setTimeout(()=>{
+
+heart.remove();
+
+},4000);
+
+}
+
+
+/* ================= MYSTERY BOX ================= */
+
+let chosen=false;
+
+function chooseBox(number){
+
+if(chosen)return;
+
+chosen=true;
+
+const result=
+document.getElementById("mystery-result");
+
+if(number===2){
+
+result.textContent=
+"🎉 YOU FOUND IT! This box contains the BEST SISTER badge! 🏆❤️";
+
+createConfetti();
+
+}else{
+
+result.textContent=
+"😂 Nice try! That box contained... absolutely nothing. Try box 2!";
+
+chosen=false;
+
+}
+
+}
+
+
+/* ================= SECRET ================= */
+
+function unlockSecret(){
+
+const input=
+document.getElementById("secretInput").value
+.trim()
+.toUpperCase();
+
+if(input==="ANOSHA"){
+
+document.getElementById("secretMessage")
+.classList.add("show");
+
+createConfetti();
+
+}else{
+
+alert(
+"❌ Wrong code!\nHint: It's your own name. 👀"
+);
+
+}
+
+}
+
+
+/* ================= MUSIC ================= */
+
+let musicPlaying=false;
+
+function toggleMusic(){
+
+const music=
+document.getElementById("music");
+
+const disc=
+document.getElementById("musicDisc");
+
+if(musicPlaying){
+
+music.pause();
+
+disc.classList.remove("playing");
+
+musicPlaying=false;
+
+}else{
+
+music.play().catch(()=>{
+
+alert(
+"Add a file named music.mp3 beside index.html first."
+);
+
+});
+
+disc.classList.add("playing");
+
+musicPlaying=true;
+
+}
+
+}
+
+
+/* ================= LETTER ================= */
+
+function openLetter(){
+
+document.getElementById("letter")
+.classList.add("show");
+
+}
+
+
+/* ================= FINAL COUNTDOWN ================= */
+
+let countdownStarted=false;
+
+const finalSection=
+document.querySelector(".final");
+
+const observer=
+new IntersectionObserver(entries=>{
+
+if(
+entries[0].isIntersecting &&
+!countdownStarted
+){
+
+countdownStarted=true;
+
+startCountdown();
+
+}
+
+},{
+threshold:.4
+});
+
+observer.observe(finalSection);
+
+
+function startCountdown(){
+
+let number=3;
+
+const display=
+document.getElementById("countdown");
+
+display.textContent=number;
+
+const timer=
+setInterval(()=>{
+
+number--;
+
+if(number>0){
+
+display.textContent=number;
+
+}else{
+
+clearInterval(timer);
+
+display.textContent="🎉";
+
+document
+.getElementById("finalMessage")
+.classList.add("show");
+
+createConfetti();
+
+createBalloons();
+
+}
+
+},1000);
+
+}
+
+
+/* ================= CONFETTI ================= */
+
+function createConfetti(){
+
+const symbols=[
+"❤️","💗","💕","✨",
+"⭐","🌸","🎉","🎊"
+];
+
+for(let i=0;i<70;i++){
+
+const piece=
+document.createElement("div");
+
+piece.className="confetti";
+
+piece.textContent=
+symbols[
+Math.floor(
+Math.random()*symbols.length
+)
+];
+
+piece.style.left=
+Math.random()*100+"vw";
+
+piece.style.fontSize=
+(12+Math.random()*20)+"px";
+
+piece.style.animationDuration=
+(2+Math.random()*2)+"s";
+
+document.body.appendChild(piece);
+
+setTimeout(()=>{
+piece.remove();
+},4500);
+
+}
+
+}
+
+
+/* ================= BALLOONS ================= */
+
+function createBalloons(){
+
+const balloons=[
+"🎈","🎈","🎈",
+"🎈","🎈","🎈"
+];
+
+balloons.forEach((emoji,i)=>{
+
+const balloon=
+document.createElement("div");
+
+balloon.textContent=emoji;
+
+balloon.style.position="fixed";
+
+balloon.style.bottom="-80px";
+
+balloon.style.left=
+(10+i*15)+"%";
+
+balloon.style.fontSize="50px";
+
+balloon.style.zIndex="9998";
+
+balloon.style.transition=
+"transform 5s ease";
+
+document.body.appendChild(balloon);
+
+setTimeout(()=>{
+
+balloon.style.transform=
+"translateY(-120vh)";
+
+},100);
+
+setTimeout(()=>{
+
+balloon.remove();
+
+},6000);
+
+});
+
+}
+
+</script>
+
+</body>
+</html>
+```
